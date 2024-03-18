@@ -1,42 +1,356 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.MainBox{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  background-color: black;
+  color: #ffffff;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.Center{
+  flex-grow:1;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  min-width: 60%;
+  min-height: 650px;
+  margin: auto;
+  background-color: #1a1a1f;
+}
+.new-chat img{
+  border-radius: 50%;
+}
+.result-container {
+  max-height: 70vh;
+  flex-grow: 1;
+  overflow-y: scroll;
+  padding: 1rem;
+}
+.Center .nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 22px;
+  padding: 6px;
+  color: #5d5959;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: rgb(32, 30, 30);
+}
+.Center img{
+  max-width: 180px;
+}
+.Center .logo{
+  background-color: rgb(32, 30, 30);
+}
+
+.Center .nav .user{
+ max-width: 50px;
+ padding-right: 5px;
+  border-radius: 50%;
+  background-color: rgb(32, 30, 30);
+}
+
+.Center .greet{
+  /* margin: 50px 0px; */
+  font-size: 56px;
+  color: #c4c7c5;
+  font-weight: 500;
+  padding-left: 20px;
+  background-color: #1a1a1f;
+}
+.Center .greet p{
+  background-color: #1a1a1f;
+}
+.Center .greet span{
+  background: -webkit-linear-gradient(16deg,#4b90ff,#ff5546);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.Center .cards{
+  display: flex;
+  grid-template-columns: repeat(auto-fill,minmax(180px,1fr));
+  gap: 15px;
+  padding: 20px;
+  background-color: #1a1a1f;
+
+}
+.Center .card{ 
+  height: 200px;
+  padding: 15px;
+  background-color: #33363d;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.Center .card img{
+  width: 35px;
+  padding: 5px;
+  position: absolute;
+  background-color: white;
+  border-radius: 20px;
+  bottom: 10px;
+  right: 10px;
+}
+
+.Center .card p{
+  color: white;
+  font-size: 17px;
+  background-color: #33363d;
+}
+
+.Center .card:hover {
+  background-color: #575a65;
+  color: #fff;
+}
+
+.Center .card:hover p {
+  background-color: #575a65;
+  color: #fff;
+}
+
+.main-bottom{
+  width: 100%;
+  max-width: 900px;
+  padding: 0px 20px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  margin: auto;
+  background-color: #1a1a1f;
+}
+.search-box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: rgb(54, 52, 52);
+  padding: 10px 20px;
+  border-radius: 50px;
+}
+.submit-btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  margin-bottom: 3px;
+}
+.search-box img{
+  width: 24px;
+  cursor: pointer;
+  background-color: rgb(54, 52, 52);
+}
+.search-box input{
+  flex:1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 8px;
+  font-size: 18px;
+}
+
+.search-box div{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: rgb(54, 52, 52);
+}
+
+
+.Center .bottom-info{
+  font-size: 13px;
+  margin: 3px;
   text-align: center;
+  font-weight: 300;
+  background-color: #1a1a1f;
+}
+.result{
+  overflow-y: scroll;
+  padding: 0px 5%;
+  background-color: #1a1a1f;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.result-title {
+  margin: 40px 0px;
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  padding: 0.1rem;
+  gap: 20px;
+  background-color: black;
+  
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.result-title div {
+  height: 4rem;
+  overflow-y: scroll;
+  padding: 0.4rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.result-title div::-webkit-scrollbar {
+  display: none;
+}
+
+.result img{
+  width: 45px;
+  border-radius: 50%;
+  margin-left:3px ;
+  
+}
+.result-data{
+  display: flex;
+  align-items: start;
+  gap: 20px;
+  border-radius: 20px;
+  background-color: #1a1a1f;
+ border: 25px black solid;
+}
+.result-data img{
+  width: 4rem;
+  height: 4rem;
+}
+.loader{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.loader hr{
+  border-radius: 4px;
+  border: none;
+  background-color: #f6f7f8;
+  background: linear-gradient(to right,#9ed7ff,#ffffff,#9ed7ff);
+  background-size: 800px 50px;
+  height: 20px;
+  animation: loader 2s infinite linear;
+}
+@keyframes loader{
+  0%{
+      background-position: -800px 0px;
   }
-  to {
-    transform: rotate(360deg);
+  100%{
+      background-position: 800px 0px;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+.result-data p{
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.8;
+}
+@media (max-width:600px) {
+  .main-bottom input{
+      flex: none;
+      width: 150px;
   }
+  .main-bottom img{
+      width: 20px;
+  }
+  .search-box{
+      padding: 5px 10px;
+  }
+  .search-box div{
+      gap: 5px;
+  }
+  
 }
 
-.card {
-  padding: 2em;
+.sidebar{
+  min-height: 70vh;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: black;
+  padding: 10px 0;
+  color: white;
+  overflow-y: scroll;
 }
 
-.read-the-docs {
-  color: #888;
+.sidebar img{
+  width: 20px;
+  min-width: 5vh;
 }
+.sidebar .menu {
+  display: block;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.sidebar .new-chat {
+  margin-top: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  background-color: black;
+  border-radius: 50px;
+  font-size: 14px;
+  color: grey;
+  cursor: pointer;
+}
+
+.new-chat p{
+margin-top: 13%;
+}
+.recent{
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 1.5s;
+}
+.recent div::-webkit-scrollbar {
+display: none;
+}
+.sidebar .recent-title{
+  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-left: 12px;
+}
+.sidebar .recent-entry{
+  display: flex;
+  align-items: start;
+  gap: 20px;
+  padding: 10px;
+  padding-right: 40px;
+  border-radius: 50px;
+  color: #282828;
+  cursor: pointer;
+}
+ .sidebar .recent-para{
+  margin-top: 2%;
+ }
+.sidebar .recent-entry:hover p{
+  background-color: #262626;
+  color: white;
+}
+.sidebar .recent-entry:hover{
+  background-color: #262626;
+  color: #262626;
+  border-radius: 15px;
+}
+.sidebar .recent-entry:hover img{
+  background-color: #262626;
+  color: white;
+}
+
+.sidebar .bottom{
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar .bottom-item{
+  padding-right: 10px;
+  cursor: pointer;    
+}
+
+@media(max-width:600px){
+.sidebar{
+  display: none;
+}
+}
+
+
+/* Center css */
+
+
+
+
